@@ -1,30 +1,14 @@
 "use client"
-import axios from 'axios';
-import { useState } from 'react'
-import { IoMenu } from 'react-icons/io5'
+import MangaCard from '@/components/MangaCard';
+import { IManga } from '@/interfaces/IManga';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 
-interface Genre {
-  id: number;
-  name: string;
-}
 
-interface Manga {
-  id: number;
-  createdAt: string;
-  modifiedAt: string;
-  releaseDate: string;
-  title: string;
-  description: string;
-  type: string;
-  posterUrl: string;
-  viewsCount: number;
-  genres: Genre[];
-}
 
 interface MangaResponse {
   currentPage: number;
-  data: Manga[];
+  data: IManga[];
   totalCount: number;
   totalPages: number;
 }
@@ -51,43 +35,29 @@ export default function Home() {
   }
   const { data, isLoading, error } = useQuery('mangas', getMangas)
 
+
+
   return (
-    <div className="flex min-h-screen text-white">
-      {/* Conteúdo da página */}
-      <main className="flex-grow bg-zinc-950">
-        <div className='flex bg-zinc-900 w-full p-3 '>
-          <h1 className='text-2xl text-red-500 font-bold'>MANGAVERSO</h1>
-          <button className='ml-auto' onClick={toggleDrawer}><IoMenu /></button>
-        </div>
-        <div className='p-4'>
-          <div className='flex bg-zinc-900 p-4 text-center justify-center'>
-            <p className='p-2 font-bold'>Ler Mangá</p>
-            <button className='ml-auto bg-red-600 px-2  text-xs rounded-md'>VER TODOS</button>
-          </div>
-          <div className='min-h-60 bg-zinc-800 p-2'>
-            {
-              isLoading ? <p>Carregando...</p> : data?.data.map((manga, index) => {
-                return (
-                  <div key={index} className='bg-slate-100 flex flex-col max-w-xs'>
-                    <div className='bg-black' >
-                      <p>{manga.type}</p>
-                    </div>
-                    <img src={manga.posterUrl} alt={manga.title}  className='max-h-32'/>
-                    <p>{manga.title}</p>
-                  </div>
-                )
-              })
-            }
-          </div>
+    <div className="flex flex-col min-h-screen bg-zinc-700 p-4">
+      <div className='flex flex-col'>
+        <h1 className='text-white font-bold' >Os mais lidos no momento!</h1>
+
+        <div className='flex flex-row overflow-x-scroll space-x-3'>
+
+          {
+            data?.data.map((manga, index) => {
+              return (
+                <MangaCard.Root manga={manga} key={index} />
+              )
+            })
+          }
+
         </div>
 
-      </main>
 
-      {/* Drawer */}
-      <aside className={`transform top-0 left-0 w-64 bg-zinc-900 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`} onClick={toggleDrawer}>
 
-        <button className="absolute top-3 right-3 text-white" onClick={toggleDrawer}>Fechar</button>
-      </aside>
+
+      </div>
     </div>
   )
 }
