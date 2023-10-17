@@ -1,1 +1,0 @@
-export { MangaCard } from './MangaCard'

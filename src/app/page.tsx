@@ -1,7 +1,6 @@
 "use client"
-import { MangaCard } from '@/components/MangaCard';
+import MangaCard from '@/components/MangaCard';
 import { IManga } from '@/interfaces/IManga';
-
 
 interface MangaResponse {
   currentPage: number;
@@ -28,8 +27,7 @@ export default async function Home() {
       <div className='flex flex-col'>
         <h1 className='text-white font-bold' >Os mais lidos no momento!</h1>
 
-        <div className='flex flex-row overflow-x-scroll space-x-3'>
-
+        <div className='flex flex-row overflow-x-scroll space-x-3 scrollbar scrollbar-thin scrollbar-thumb-gray-900 scrollbar-thumb-gray-500 p-4'>
           {
             data?.data.map((manga, index) => {
               return (
@@ -37,12 +35,7 @@ export default async function Home() {
               )
             })
           }
-
         </div>
-
-
-
-
       </div>
     </div>
   )

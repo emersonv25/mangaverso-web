@@ -4,14 +4,17 @@ import Link from "next/link";
 export default function Page({ params }: { params: { id: string } }) {
     console.log(params.id)
     return (
-        <div className="flex flex-col h-screen w-screen  overflow-x-hidden px-4">
-            <Link href={'/'}>
-                <div className="flex flex-row   font-bold space-x-4 pt-5 text-center justify-left ">
-                    <ArrowLeft />
-                    <p className="text-lg">Detalhes</p>
-                </div>
-            </Link>
-            
+        <div className="flex flex-col h-screen w-screen  overflow-x-hidden px-4 ">
+            <div className="flex flex-row pt-5 ">
+                <Link href={'/'}>
+                    <div className="flex flex-row font-bold space-x-2 text-center justify-left items-center py-2 ">
+                        <ArrowLeft />
+                        <p className="text-base text-center ">Voltar</p>
+                    </div>
+                </Link>
+
+            </div>
+
             <div className="flex flex-col justify-center items-center  space-y-2 pt-10">
                 <Image src={'/capa2.jpg'} alt="rara" width={200} height={350} />
                 <p className="text-lg font-bold">Chainsaw Man</p>

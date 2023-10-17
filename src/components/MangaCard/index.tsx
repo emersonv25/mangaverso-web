@@ -5,7 +5,7 @@ import Link from "next/link"
 type MangaCardProps = {
     manga: IManga
 }
-export const MangaCard: React.FC<MangaCardProps> = ({ manga }: MangaCardProps) => {
+const MangaCard: React.FC<MangaCardProps> = ({ manga }: MangaCardProps) => {
     return (
         <Link href={`/mangas/${manga.id}`}>
             <div className='flex flex-col min-w-[125px] min-h-[200px] max-w-[200px] overflow-hidden rounded-lg relative'>
@@ -27,3 +27,5 @@ export const MangaCard: React.FC<MangaCardProps> = ({ manga }: MangaCardProps) =
         </Link>
     )
 }
+
+export default MangaCard
