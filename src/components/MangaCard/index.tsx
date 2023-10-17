@@ -18,7 +18,7 @@ const MangaCard: React.FC<MangaCardProps> = ({ manga }: MangaCardProps) => {
                     sizes="(max-width: 600px) 100vw, 50vw"
                     style={{ width: '100%', height: 'auto' }}
                 />
-                <div className=' bg-black w-full p-1 bottom-0 opacity-80'>
+                <div className='  w-full p-1 bottom-0 opacity-80'>
                     <p className='opacity-100 line-clamp-1 hover:line-clamp-2 text-white font-bold text-xs sm:text-xs lg:text-sm text-center'>
                         {manga.title}
                     </p>
