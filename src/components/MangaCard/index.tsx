@@ -12,7 +12,6 @@ const MangaCard: React.FC<MangaCardProps> = ({ manga }: MangaCardProps) => {
                 <Image
                     src={manga.posterUrl}
                     alt={manga.title}
-                    layout="responsive"
                     width={1000}
                     height={600}
                     sizes="(max-width: 600px) 100vw, 50vw"
