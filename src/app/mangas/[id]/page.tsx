@@ -2,7 +2,6 @@ import Image from "next/image";
 import { BookOpen, MessagesSquare, Heart, ArrowLeft } from 'lucide-react';
 import Link from "next/link";
 export default function Page({ params }: { params: { id: string } }) {
-    console.log(params.id)
     return (
         <div className="flex flex-col h-screen w-screen  overflow-x-hidden px-4 ">
             <div className="flex flex-row pt-5 ">
@@ -56,7 +55,31 @@ export default function Page({ params }: { params: { id: string } }) {
                     Chainsaw Man" conta a história de Denji, um jovem endividado que, após a morte de seu pai, assume uma dívida monumental devido a um contrato com demônios. Para sobreviver, Denji se funde com o coração de um demônio de motosserra e se torna o "Chainsaw Man," um ser com a habilidade de se regenerar e combater demônios. No entanto, sua vida como caçador de demônios é tudo, menos glamorosa, uma vez que ele enfrenta perigos inimagináveis e é frequentemente subjugado por agências governamentais que o usam como uma ferramenta.
                 </span>
             </div>
+            <div className="mt-2 mb-3">
+                <div className="text-lg font-bold mt-3 mb-3">
+                    Capítulos
+                </div>
+                <div className="text-sm font-medium">
+                    <a href="#" aria-current="true" className="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                        <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-200">1</span>
 
+                        Capítulo 1
+                    </a>
+                    <a href="#" className="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                        <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-200">2</span>
+                        Capítulo 2
+                    </a>
+                    <a href="#" className="block w-full px-4 py-2 border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                        <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-200">3</span>
+                        Capítulo 3
+                    </a>
+                    <a href="#" className="block w-full px-4 py-2 rounded-b-lg cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                        <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-200">4</span>
+
+                        Capítulo 4
+                    </a>
+                </div>
+            </div>
         </div >
     )
 }
