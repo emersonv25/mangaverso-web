@@ -11,9 +11,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className='flex flex-col min-h-screen bg-zinc-700 text-white'>
-      {children}
-    </div>
-
+    <html lang="en">
+      <body className='flex flex-col min-h-screen bg-zinc-700 text-white'>{children}</body>
+    </html>
   )
 }
