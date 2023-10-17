@@ -1,5 +1,5 @@
 "use client"
-import MangaCard from '@/components/MangaCard';
+import { MangaCard } from '@/components/MangaCard';
 import { IManga } from '@/interfaces/IManga';
 
 
@@ -33,7 +33,7 @@ export default async function Home() {
           {
             data?.data.map((manga, index) => {
               return (
-                <MangaCard.Root manga={manga} key={index} />
+                <MangaCard manga={manga} key={index} />
               )
             })
           }

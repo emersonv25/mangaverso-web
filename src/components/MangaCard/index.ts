@@ -1,5 +1,1 @@
-import { MangaCard } from "./MangaCard";
-
-export default {
-    Root: MangaCard
-}
+export { MangaCard } from './MangaCard'
