@@ -12,7 +12,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='flex flex-col min-h-screen bg-zinc-700 text-white'>{children}</body>
+      <body >
+        <div className='flex flex-col min-h-screen bg-zinc-700 text-white'>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
