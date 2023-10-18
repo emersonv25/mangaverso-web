@@ -2,11 +2,12 @@ import MangaCard from '@/components/MangaCard';
 import { MangaService } from '@/services/MangaService';
 import Manga from '@/types/Manga/Manga';
 import PaginationDto from '@/types/PaginationDto';
+import { MenuIcon } from 'lucide-react';
 
 
-const getData = async () => {
-  return await MangaService.getAll()
-}
+// const getData = async () => {
+//   return await MangaService.getAll()
+// }
 
 const mockMangaResponse: PaginationDto<Manga[]> = {
   currentPage: 1,
@@ -50,11 +51,15 @@ const mockMangaResponse: PaginationDto<Manga[]> = {
       ]
     }
   ]
-} 
+}
+
+
 export default async function Home() {
   const mangaResponse = mockMangaResponse//await getData()
   return (
     <div className="flex flex-col min-h-screen bg-zinc-700 p-4">
+
+
       <div className='flex flex-col'>
         <h1 className='text-white font-bold'>Os mais lidos no momento!</h1>
 
