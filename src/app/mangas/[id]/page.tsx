@@ -52,7 +52,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
             <div>
                 <span>
-                    Chainsaw Man" conta a história de Denji, um jovem endividado que, após a morte de seu pai, assume uma dívida monumental devido a um contrato com demônios. Para sobreviver, Denji se funde com o coração de um demônio de motosserra e se torna o "Chainsaw Man," um ser com a habilidade de se regenerar e combater demônios. No entanto, sua vida como caçador de demônios é tudo, menos glamorosa, uma vez que ele enfrenta perigos inimagináveis e é frequentemente subjugado por agências governamentais que o usam como uma ferramenta.
+                    Chainsaw Man conta a história de Denji, um jovem endividado que, após a morte de seu pai, assume uma dívida monumental devido a um contrato com demônios. Para sobreviver, Denji se funde com o coração de um demônio de motosserra e se torna o Chainsaw Man, um ser com a habilidade de se regenerar e combater demônios. No entanto, sua vida como caçador de demônios é tudo, menos glamorosa, uma vez que ele enfrenta perigos inimagináveis e é frequentemente subjugado por agências governamentais que o usam como uma ferramenta.
                 </span>
             </div>
             <div className="mt-2 mb-3">
