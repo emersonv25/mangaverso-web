@@ -1,7 +1,21 @@
+
 import Image from "next/image";
 import { BookOpen, MessagesSquare, Heart, ArrowLeft } from 'lucide-react';
 import Link from "next/link";
-export default function Page({ params }: { params: { id: string } }) {
+import { MangaService } from "@/services/MangaService";
+
+
+export async function generateStaticParams() {
+    return [{ id: '1' }]
+}
+
+const getData = async (id: number) => {
+    return await MangaService.getById(id)
+}
+
+export default async function Page({ params }: { params: { id: string } }) {
+
+    const mangaResponse = await getData(Number(params.id));
     return (
         <div className="flex flex-col h-screen w-screen  overflow-x-hidden px-4 ">
             <div className="flex flex-row pt-5 ">
@@ -15,8 +29,8 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
 
             <div className="flex flex-col justify-center items-center  space-y-2 pt-10">
-                <Image src={'/capa2.jpg'} alt="rara" width={200} height={350} />
-                <p className="text-lg font-bold">Chainsaw Man</p>
+                <Image src={mangaResponse.posterUrl} alt="rara" width={200} height={350} />
+                <p className="text-lg font-bold">{mangaResponse.title}</p>
 
                 <button className="bg-red-400 hover:bg-red-500 rounded-xl px-4 py-1 text-sm font-bold">Continuar</button>
             </div >
@@ -52,7 +66,7 @@ export default function Page({ params }: { params: { id: string } }) {
             </div>
             <div>
                 <span>
-                    Chainsaw Man conta a história de Denji, um jovem endividado que, após a morte de seu pai, assume uma dívida monumental devido a um contrato com demônios. Para sobreviver, Denji se funde com o coração de um demônio de motosserra e se torna o Chainsaw Man, um ser com a habilidade de se regenerar e combater demônios. No entanto, sua vida como caçador de demônios é tudo, menos glamorosa, uma vez que ele enfrenta perigos inimagináveis e é frequentemente subjugado por agências governamentais que o usam como uma ferramenta.
+                    {mangaResponse.description}
                 </span>
             </div>
             <div className="mt-2 mb-3">

@@ -5,24 +5,29 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@capacitor/android": "^5.5.0",
+    "@capacitor/core": "^5.5.0",
+    "@capacitor/ios": "^5.5.0",
+    "axios": "^1.5.1",
+    "axios-mock-adapter": "^1.22.0",
+    "flowbite": "^1.8.1",
+    "lucide-react": "^0.284.0",
     "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-query": "^3.39.3",
-    "swiper": "^10.3.1",
-    "flowbite": "^1.8.1",
-    "axios": "^1.5.1",
-    "axios-mock-adapter": "^1.22.0",
-    "lucide-react": "^0.284.0"
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
+    "@capacitor/cli": "^5.5.0",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.5",
