@@ -4,11 +4,6 @@ import { BookOpen, MessagesSquare, Heart, ArrowLeft } from 'lucide-react';
 import Link from "next/link";
 import { MangaService } from "@/services/MangaService";
 
-
-export async function generateStaticParams() {
-    return [{ id: '1' }]
-}
-
 const getData = async (id: number) => {
     return await MangaService.getById(id)
 }
